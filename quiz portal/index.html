@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Quiz Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Home Screen -->
+        <div id="home-screen" class="screen active">
+            <h1>💻 Smart Quiz Portal</h1>
+            <p>Test Your Knowledge!</p>
+            <div class="button-group">
+                <button class="btn btn-primary" onclick="startQuiz('coding')">
+                    🎯 Coding Language Quiz
+                </button>
+                <button class="btn btn-secondary" onclick="startQuiz('general')">
+                    🌍 General Knowledge Quiz
+                </button>
+            </div>
+        </div>
+
+        <!-- Category Selection Screen -->
+        <div id="category-screen" class="screen">
+            <h2>Select a Programming Language</h2>
+            <div class="category-grid">
+                <button class="btn-category" onclick="startCodingQuiz('HTML')">📄 HTML</button>
+                <button class="btn-category" onclick="startCodingQuiz('CSS')">🎨 CSS</button>
+                <button class="btn-category" onclick="startCodingQuiz('JavaScript')">⚡ JavaScript</button>
+                <button class="btn-category" onclick="startCodingQuiz('Python')">🐍 Python</button>
+                <button class="btn-category" onclick="startCodingQuiz('C++')">⚙️ C++</button>
+            </div>
+            <button class="btn btn-primary btn-small" onclick="goHome()">Back to Home</button>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <div class="quiz-info">
+                    Question <span id="currentQuestion">1</span> of <span id="totalQuestions">10</span>
+                </div>
+                <div class="timer" id="timer">20:00</div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="question-card">
+                <div class="question-text" id="questionText"></div>
+                <div class="options" id="optionsContainer"></div>
+            </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="screen">
+            <h2>🎉 Quiz Completed!</h2>
+            <div class="result-stats">
+                <div class="stat-box">
+                    <div class="stat-label">Total Questions</div>
+                    <div class="stat-value" id="totalStat">10</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Correct Answers</div>
+                    <div class="stat-value" id="correctStat">8</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Wrong Answers</div>
+                    <div class="stat-value" id="wrongStat">2</div>
+                </div>
+                <div class="stat-box percentage-box">
+                    <div class="percentage-label">Your Score</div>
+                    <div class="percentage-value" id="percentageStat">80%</div>
+                </div>
+            </div>
+            <button class="btn btn-primary" onclick="restartQuiz()">🔄 Restart Quiz</button>
+            <button class="btn btn-secondary back-button" onclick="goHome()">🏠 Back to Home</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
